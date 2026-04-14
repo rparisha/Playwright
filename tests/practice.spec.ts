@@ -32,7 +32,7 @@ test('Verify the visible test in Buzz after posting a message' , async ({page}) 
     await expect(page.locator('h6')).toHaveText('Buzz');
     await page.getByPlaceholder("What's on your mind?").fill('Hello everyone!');
     await page.locator("//button[@type='submit']").click();
-    await expect(page.getByText('Hello everyone!')).toBeVisible();
+    await expect(page.getByText('Hello everyone!').first()).toBeVisible();
 });
 
 test('Verify the website domain name', async ({page}) => {

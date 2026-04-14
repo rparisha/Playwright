@@ -17,13 +17,13 @@ console.log("Permanent address filled");
 await page.locator('#submit').click();
 console.log("Submit button clicked");
 
-expect(page.locator('#name')).toHaveText("Name:Murugan");
+await expect(page.locator('#name')).toHaveText("Name:Murugan");
 console.log("Name text verified");
 expect(page.locator('#email')).toHaveText("Email:murugan@gmail.com");
 console.log("Email text verified");
-expect(page.locator('#currentAddress').nth(1)).toHaveText("Current Address :Coimbatore");
+await expect(page.locator('#currentAddress').nth(1)).toHaveText("Current Address :Coimbatore");
 console.log("Current address text verified");
-expect(page.locator('#permanentAddress').nth(1)).toHaveText("Permananet Address :Kerala");
+await expect(page.locator('#permanentAddress').nth(1)).toHaveText("Permananet Address :Kerala");
 console.log("Permanent address text verified"); 
 
 });
