@@ -52,12 +52,12 @@ test('Verify the checkbox functionality' , async ({page}) => {
 
     await page.goto('https://demoqa.com/upload-download');
     console.log('The page is successfully loaded');
-    const filepath = "C:\\Users\\HEMANTH\\RJ\\Notes\\Selenium.txt";
+    const filepath = "tests\\fixtures\\selenium.txt";
     await page.setInputFiles('#uploadFile', filepath);
     console.log("The file is uploaded successfully");
     const uploadedFilePath = await page.locator('#uploadedFilePath').textContent();
     console.log("The uploaded file path is: " + uploadedFilePath);
-    expect(uploadedFilePath).toContain("Selenium.txt");
+    expect(uploadedFilePath).toContain("C:\\fakepath\\selenium.txt");
     console.log("The uploaded file path is verified successfully");
     await page.locator('#downloadButton').click();
     console.log("The file is downloaded successfully");
